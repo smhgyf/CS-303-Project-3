@@ -21,4 +21,7 @@ public:
 	void setNode(char key, string morse);
 	void insertNode(mNode node, mNode root);
 	void findNode(struct mNode);
+	
+	string encode(string message); //encode wrapper
+	bool encode(char target, mNode *root, stack<char> & code);
 }
