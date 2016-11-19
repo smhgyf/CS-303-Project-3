@@ -1,4 +1,4 @@
-string decode_letter(mNode *Root, string Code, int index)
+string decode_letter(mNode *Root, string code, int index)
 {
 if (Root==NULL)
   return"";
@@ -23,7 +23,7 @@ if (Root==NULL)
 
 string decode_wrapper(mNode *Root, string code)
 {
-string letter=decode(Root,Code,0)
+string letter=decode(Root,code,0)
 return letter;
 }
 
