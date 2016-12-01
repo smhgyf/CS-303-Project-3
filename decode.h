@@ -35,7 +35,7 @@ for(int i=0; i<=Code.size(); i++)
 {
 if (Code[i]==" ")  //NOT AN EMPTY STRING this is a space specifically. That is what splits letters
   {
-  word=word+decode_wrapper(Root, Code)   //finds the next letter from the letterCode created.
+  word=word+decode_wrapper(Root, letterCode)   //finds the next letter from the letterCode created.
   letterCode="";
   }
 else
