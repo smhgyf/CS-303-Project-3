@@ -5,10 +5,10 @@ if (Root==NULL)
  if (index==code.size())       //last direction in code
  {
   if(code[index]==".")
-    return Root->left->value;
+    return Root->left->key;
   if (code[index]=="-")
-    return Root->right->value;
-  else return Root->value;
+    return Root->right->key;
+  else return Root->key;
  }
  else                          //still going through code  
  { 
