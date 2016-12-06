@@ -1,27 +1,20 @@
 #include <string>
-
-using namespace std;
-
+#pragma once
+struct M_Data
+{
+	//Data Fields
+	/** The weight or probability assigned to this HuffData*/
+	/** The alphabet symbol if this is a leaf */
+	string weight;
+	char symbol;
+	M_Data *left;
+	M_Data *right;
+	// Constructor
+	M_Data(string w = " ", char s = ' ', M_Data* left = NULL, M_Data* right = NULL) : weight(w), symbol(s), left(left), right(right) {};
+};
 class MTree {
 private:
-	struct mNode {
-		mNode* mRight;
-		mNode* mLeft;
-		char key;
-		string morse;
-		mNode() {
-			mRight = NULL;
-			mLeft = NULL;
-			key = ' ';
-			morse = "";
-		}
-	};
-	mNode root;
+	M_Data *root = new M_Data;
 public:
-	void setNode(char key, string morse);
-	void insertNode(mNode node, mNode root);
-	void findNode(struct mNode);
-	
-	string encode(string message); //encode wrapper
-	bool encode(char target, mNode *root, stack<char> & code);
-}
+	void build_tree(vector<M_Data> symbols);
+};
