@@ -1,17 +1,51 @@
+
 #include "MorseTree.h"
+#include <vector>
 
 using namespace std;
 
-void MTree::setNode(char key, string morse) {
-	mNode node;
-	node.key = key;
-	node.morse = morse;
-	insertNode(node, root);
-}
-void MTree::insertNode(mNode node, mNode root) {
 
+void MTree::build_tree(vector<M_Data> symbols) {
+
+	// Build the tree
+	int i = 0;
+
+	root->left = &symbols[i];
+	i++;
+	root->right = &symbols[i];
+	i++;
+	for (i = 2; i < symbols.size(); i++)
+	{
+		int j = 0;
+		M_Data *current = root;
+		while (j < symbols[i].weight.size()) {
+			if (symbols[i].weight[j] == '.') {
+				if (current->left != NULL) {
+					current = current->left;
+					j++;
+				}
+				else
+				{
+					current->left = &symbols[i];
+					j++;
+				}
+			}
+
+			if (symbols[i].weight[j] == '_') {
+				if (current->right != NULL) {
+					current = current->right;
+					j++;
+				}
+				else
+				{
+					current->right = &symbols[i];
+					j++;
+				}
+			}
+		}
+
+	}
 }
-void MTree::findNode(mNode node) {}
 
 string MTree::encode(string message) { //wrapper
 	stack<char> charCode;
