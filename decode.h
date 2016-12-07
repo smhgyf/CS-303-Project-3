@@ -6,7 +6,7 @@ if (Root==NULL)
  {
   if(code[index]==".")
     return Root->left->key;
-  if (code[index]=="-")
+  if (code[index]=="_")
     return Root->right->key;
   else return Root->key;
  }
@@ -14,7 +14,7 @@ if (Root==NULL)
  { 
  if(code[index]==".")
     return decode_letter(Root->left,code,index+1);
- if (code[index]=="-")
+ if (code[index]=="_")
     return decode_letter(Root->right,code,index+1);
  } 
  return "";   //back up in case everything goes wrong
