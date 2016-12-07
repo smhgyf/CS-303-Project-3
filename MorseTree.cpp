@@ -67,7 +67,7 @@ string MTree::encode(string message) { //wrapper
 	return fullCode;
 }
 
-bool MTree::encode(char target, M_Node *root, stack<char> & code) {
+bool MTree::encode(char target, M_Data *root, stack<char> & code) {
 	if (root == NULL) return false;
 
 	if (root->key == target) return true;
