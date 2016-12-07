@@ -17,4 +17,6 @@ private:
 	M_Data *root = new M_Data;
 public:
 	void build_tree(vector<M_Data> symbols);
+	string encode(string message); //wrapper
+	bool encode(char target, M_Data *root, stack<char> & code);
 };
