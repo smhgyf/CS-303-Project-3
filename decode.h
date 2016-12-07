@@ -23,7 +23,7 @@ if (Root==NULL)
 
 string decode_wrapper(mNode *Root, string code)
 {
-string letter=decode(Root,code,0)
+string letter=decode_letter(Root,code,0)
 return letter;
 }
 
